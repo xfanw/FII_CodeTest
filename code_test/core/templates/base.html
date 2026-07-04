@@ -1,0 +1,56 @@
+{% load static %}
+
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="{% static 'bootstrap/bootstrap.css' %}?v=1.0">
+    <link rel="stylesheet" href="{% static 'core.css' %}?v=1.0">
+    <link rel="stylesheet" href="{% static 'fontawsome/fontawsome.css' %}?v=1.0">
+    <link rel="stylesheet" href="{% static 'sweetalert/sweetalert.css' %}?v=1.0">
+    
+
+    <script type="text/javascript" src="{% static 'bootstrap/bootstrap.js' %}?v=1.0"></script>
+    <script type="text/javascript" src="{% static 'fontawsome/fontawsome.js' %}?v=1.0"></script>
+    <script type="text/javascript" src="{% static 'sweetalret/sweetalert.js' %}?v=1"></script>
+    <script type="text/javascript" src="{% static 'jquery/jquery.js' %}?v=1"></script>
+    <meta charset="UTF-8">
+
+    {% block page_level_header_css %}
+    {% endblock %}
+
+    <title>
+        {% block title %}
+            CODE TEST
+        {% endblock %}
+    </title>
+</head>
+
+<body>
+
+<div class="container-fluid">
+    <div class='row m-5'>
+        <div class='col-md-12 mx-0'>
+            {% block page_top_content %}
+            {% endblock %}
+        </div>
+    </div>
+
+
+    <div class='row mx-5'>
+        <div class='col-md-12' id='core_body_content'>
+            {% block body_content %}
+            {% endblock %}
+        </div>
+    </div>
+
+    <div class='row mx-5'>
+        <div class='col-md-12'>
+        </div>
+    </div>
+
+
+</div>
+
+
+<!-- <script type="text/javascript" src="{% static 'js/core/core.js' %}?v=2.1"></script> -->
+</body>
+</html>
