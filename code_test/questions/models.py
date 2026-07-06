@@ -7,5 +7,5 @@ from django.db import models
 class Employee(models.Model):
     """_summary_"""
 
-    first_name = models.CharField(max_length=255, default='')
-    last_name = models.CharField(max_length=255, default='')
+    first_name = models.CharField(max_length=255, default="")
+    last_name = models.CharField(max_length=255, default="")

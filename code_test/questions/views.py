@@ -1,10 +1,7 @@
 from django.shortcuts import render
 
-
-# Create your views here.
-def questions(request):
-    context = {}
-    return render(request, "questions/questions.html", context)
+from core.app_functions import json_success
+from questions.models import Employee
 
 
 def question1(request):
@@ -18,5 +15,12 @@ def question2(request):
 
 
 def question3(request):
-    context = {}
+    context = {"emp_list": Employee.objects.all()}
+    print(context)
     return render(request, "questions/question3.html", context)
+
+
+def delete_emp(request):
+    my_id = request.GET.get("my_id")
+    Employee.objects.filter(id=my_id).delete()
+    return json_success()
