@@ -15,3 +15,8 @@ def question1(request):
 def question2(request):
     context = {}
     return render(request, "questions/question2.html", context)
+
+
+def question3(request):
+    context = {}
+    return render(request, "questions/question3.html", context)

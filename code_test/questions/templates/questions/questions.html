@@ -11,7 +11,7 @@
 
 {% block body_content %}
     <div class='card'>
-        <table class="table table-hover table-fixed text-center">
+        <table class="table table-hover table-fixed text-center mb-0">
             <thead class='thead-sticky'>
                 <tr class='fw-bold'>
                     <th width='30%'>Question</th>
@@ -32,6 +32,12 @@
                     <td>2</td>
                     <td>Js/Jquery</td>
                     <td>Compare Values</td>
+                </tr>
+                <tr>
+                    <td><a href='{% url "questions:question3" %}'>Question 3</a></td>
+                    <td>4</td>
+                    <td>DB, AJAX</td>
+                    <td>Delete Record</td>
                 </tr>
 
             </tbody>
