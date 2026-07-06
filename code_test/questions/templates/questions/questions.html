@@ -3,8 +3,8 @@
 {% load static %}
 
 {% block page_top_content %}
-<div>
-    <h4>Hello!!</h4>
+<div class='py-3 bg-primary'>
+    <h4 class='bg-primary text-white text-center'>Hello!!</h4>
 </div>
 {% endblock %}
 
@@ -16,40 +16,24 @@
                 <tr class='fw-bold'>
                     <th width='30%'>Question</th>
                     <th width='20%'>Difficulty</th>
-                    <th width='50%'>Skill</th>
+                    <th width='20%'>Skill</th>
+                    <th width='30%'>Description</th>
                 </tr>
             </thead>
             <tbody class="text-center">
                 <tr>
-                    <td>Question 1</d>
+                    <td><a href='{% url "questions:question1" %}'>Question 1</a></td>
                     <td>1</td>
-                    <td>HTML</td>
+                    <td>HTML / CSS</td>
+                    <td>Center An Elenement</td>
                 </tr>
                 <tr>
-                    <td>Question 1</d>
-                    <td>1</td>
-                    <td>HTML</td>
+                    <td><a href='{% url "questions:question2" %}'>Question 2</a></td>
+                    <td>2</td>
+                    <td>Js/Jquery</td>
+                    <td>Compare Values</td>
                 </tr>
-                <tr>
-                    <td>Question 1</d>
-                    <td>1</td>
-                    <td>HTML</td>
-                </tr>
-                <tr>
-                    <td>Question 1</d>
-                    <td>1</td>
-                    <td>HTML</td>
-                </tr>
-                <tr>
-                    <td>Question 1</d>
-                    <td>1</td>
-                    <td>HTML</td>
-                </tr>
-                <tr>
-                    <td>Question 1</d>
-                    <td>1</td>
-                    <td>HTML</td>
-                </tr>
+
             </tbody>
         </table>
     </div>
