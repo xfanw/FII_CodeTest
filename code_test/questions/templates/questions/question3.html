@@ -15,7 +15,7 @@
     <h4 class='px-3 py-2'>
         Click <i class='fa fa-trash text-danger'></i> button to remove the corresponding record from the table.
     </h4>
-    <button class='btn btn-primary' onclick='reset_employee_data()'>Reset Data</button>
+    {% if not emp_list %}<button class='btn btn-primary' onclick='reset_employee_data()'>Reset Data</button>{% endif %}
 </div>
 {% endblock %}
 
