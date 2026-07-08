@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}
+    Question 4
+{% endblock %}
+
+
+{% block question_head %}
+Question 4: Search Value
+{% endblock %}
+
+{% block question_detail %}
+    Click <i class='fa fa-trash text-danger'></i> button to remove the corresponding record from the table.
+    {% if not emp_list %}<br><button class='btn btn-primary' onclick='reset_employee_data()'>Reset Data</button>{% endif %}
+{% endblock %}
+
+
+{% block body_content %}
+<div class='col-md-3'>
+    <input class='form-control'>
+</div>
+<div class='card mt-2'>
+    <table class="table table-hover table-fixed text-center mb-0">
+        <thead class='thead-sticky'>
+            <tr class='fw-bold'>
+                <th width='20%'>First</th>
+                <th width='20%'>Last</th>
+                <th width='60%'>Action</th>
+            </tr>
+        </thead>
+        <tbody class="text-center">
+            {% for emp in emp_list %}
+            <tr>
+                <td>{{emp.first_name}}</td>
+                <td>{{emp.last_name}}</td>
+                <td><button class='fa fa-trash text-danger' onclick='delete_curr_row("{{emp.id}}", "{{emp.first_name}}", "{{emp.last_name}}")'></button></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+<div class='row mt-5'>
+    <div class='col-md-1'><a class='btn btn-sm btn-outline-info' href='{% url "questions:question2" %}'>Prev</a></div>
+    <div class='col-md-4'></div>
+    <div class='col-md-2 text-center'><a class='btn btn-sm btn-outline-info' href='{% url "questions:questions" %}'>Question List</a></div>
+    <div class='col-md-4'></div>
+    <div class='col-md-1 text-end'><a class='btn btn-sm btn-outline-info' href='{% url "questions:questions" %}'>Next</a></div>
+</div>
+{% endblock %}
+
+{% block js_block %}
+    <script type="text/javascript" src="{% static 'questions/question3_nochange.js' %}?v=1.0"></script>
+    <script type="text/javascript" src="{% static 'questions/question3.js' %}?v=1.0"></script>
+{% endblock %}

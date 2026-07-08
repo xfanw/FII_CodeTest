@@ -23,3 +23,8 @@ def question3_delete_emp(request):
     my_id = request.GET.get("emp_id")
     Employee.objects.filter(id=my_id).delete()
     return json_success()
+
+
+def question4(request):
+    context = {"emp_list": Employee.objects.all()}
+    return render(request, "questions/question4.html", context)
