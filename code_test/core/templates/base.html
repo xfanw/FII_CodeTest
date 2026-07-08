@@ -30,8 +30,16 @@
 <div class="container-fluid">
     <div class='row m-5'>
         <div class='col-md-12'>
-            {% block page_top_content %}
-            {% endblock %}
+            <div class='py-2 bg-primary card'>
+                <h4 class='text-white text-center'>{% block question_head %}{% endblock %}</h4>
+            </div>
+
+            <div class='my-3'>
+                <h4 class='px-3 py-2'>
+                    <span class='text-danger'>Requirement:</span><br>
+                    {% block question_detail %}{% endblock %}
+                </h4>
+            </div>
         </div>
     </div>
 

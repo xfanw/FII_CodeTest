@@ -6,22 +6,18 @@
     Question 2
 {% endblock %}
 
-{% block page_top_content %}
-<div class='py-2 bg-primary card'>
-    <h4 class='text-white text-center'>Question 2: Input value Check</h4>
-</div>
 
-<div class='my-3'>
-    <h4 class='px-3 py-2'>
-        <span class='text-danger'>Requirement:</span><br>
-        Create a Js function to validate the user's input. The function should:<br>
-        Display <span class='px-2 bg-white text-success'>PASS</span> when the input value is within the specified range.<br>
-        Display <span class='px-2 bg-white text-danger'>FAIL</span> when the input value is outside the specified range.<br>
-        Display <span class='px-2 bg-white text-secondary'>Pending</span> when the input field is empty.<br>
-        (Extra credit: Validate user input)<br>
-        You may use either Js or jQuery
-    </h4>
-</div>
+{% block question_head %}
+Question 2: Input value Check
+{% endblock %}
+
+{% block question_detail %}
+    Create a Js function to validate the user's input. The function should:<br>
+    Display <span class='px-2 bg-white text-success'>PASS</span> when the input value is within the specified range.<br>
+    Display <span class='px-2 bg-white text-danger'>FAIL</span> when the input value is outside the specified range.<br>
+    Display <span class='px-2 bg-white text-secondary'>Pending</span> when the input field is empty.<br>
+    (Extra credit: Validate user input)<br>
+    You may use either Js or jQuery
 {% endblock %}
 
 
