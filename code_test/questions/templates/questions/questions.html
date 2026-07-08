@@ -3,8 +3,8 @@
 {% load static %}
 
 {% block page_top_content %}
-<div class='py-3 bg-primary'>
-    <h4 class='bg-primary text-white text-center'>Hello!!</h4>
+<div class='py-2 bg-primary'>
+    <h4 class='text-white text-center'>Welcome to FII Django Project Code Test</h4>
 </div>
 {% endblock %}
 
@@ -23,20 +23,26 @@
             <tbody class="text-center">
                 <tr>
                     <td><a href='{% url "questions:question1" %}'>Question 1</a></td>
-                    <td>1</td>
+                    <td>
+                        {% include 'questions/include/difficulty_level.html' with difficulty=1 %}
+                    </td>
                     <td>HTML / CSS</td>
-                    <td>Center An Elenement</td>
+                    <td>Center an Elenement</td>
                 </tr>
                 <tr>
                     <td><a href='{% url "questions:question2" %}'>Question 2</a></td>
-                    <td>2</td>
+                    <td>
+                        {% include 'questions/include/difficulty_level.html' with difficulty=2 %}
+                    </td>
                     <td>Js/Jquery</td>
-                    <td>Compare Values</td>
+                    <td>Input value Check</td>
                 </tr>
                 <tr>
                     <td><a href='{% url "questions:question3" %}'>Question 3</a></td>
-                    <td>4</td>
-                    <td>DB, AJAX</td>
+                    <td>
+                        {% include 'questions/include/difficulty_level.html' with difficulty=2 %}
+                    </td>
+                    <td>AJAX</td>
                     <td>Delete Record</td>
                 </tr>
 

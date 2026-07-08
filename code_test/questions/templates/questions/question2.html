@@ -7,12 +7,13 @@
 {% endblock %}
 
 {% block page_top_content %}
-<div class='py-3 bg-primary'>
-    <h4 class='bg-primary text-white text-center'>Question 2</h4>
+<div class='py-2 bg-primary card'>
+    <h4 class='text-white text-center'>Question 2: Input value Check</h4>
 </div>
 
 <div class='my-3'>
     <h4 class='px-3 py-2'>
+        <span class='text-danger'>Requirement:</span><br>
         Create a Js function to validate the user's input. The function should:<br>
         Display <span class='px-2 bg-white text-success'>PASS</span> when the input value is within the specified range.<br>
         Display <span class='px-2 bg-white text-danger'>FAIL</span> when the input value is outside the specified range.<br>
@@ -44,13 +45,7 @@
     </div>
 </div>
 
-<div class='row mt-5'>
-    <div class='col-md-1'><a class='btn btn-sm btn-outline-info' href='{% url "questions:question1" %}'>Prev</a></div>
-    <div class='col-md-4'></div>
-    <div class='col-md-2 text-center'><a class='btn btn-sm btn-outline-info' href='{% url "questions:questions" %}'>Question List</a></div>
-    <div class='col-md-4'></div>
-    <div class='col-md-1 text-end'><a class='btn btn-sm btn-outline-info' href='{% url "questions:question3" %}'>Next</a></div>
-</div>
+
 
 <div class='row mt-5'>
     <div class='mt-3'>
@@ -58,16 +53,33 @@
     </div>
     <video controls><source src='{% static "img/question2.mp4" %}' type='video/mp4'></video>
 </div>
+
+<div class='row mt-5'>
+    <div class='col-md-1'><a class='btn btn-sm btn-outline-info' href='{% url "questions:question1" %}'>Prev</a></div>
+    <div class='col-md-4'></div>
+    <div class='col-md-2 text-center'><a class='btn btn-sm btn-outline-info' href='{% url "questions:questions" %}'>Question List</a></div>
+    <div class='col-md-4'></div>
+    <div class='col-md-1 text-end'><a class='btn btn-sm btn-outline-info' href='{% url "questions:question3" %}'>Next</a></div>
+</div>
 {% endblock %}
 
 {% block js_block %}
     <script>
         $("#input_value").keyup(function(){
             let my_val = $(this).val().trim()
-            {% comment %} Modify This Function to Finish the Question 2 {% endcomment %}
-            Swal.fire({
-                text:`You inputed ${my_val}.`
-            }) 
+            check_input_val(my_val)
         })
+
+        $("#input_value").change(function(){
+            let my_val = $(this).val().trim()
+            check_input_val(my_val)
+        })
+
+        function check_input_val(input_val){
+            Swal.fire({
+                title:`You inputed ${input_val}.`,
+                html: 'Hint: Find this function, remove the current prompt, and replace it with your own checking function.'
+            }) 
+        }
     </script>
 {% endblock %}

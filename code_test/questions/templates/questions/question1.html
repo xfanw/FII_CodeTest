@@ -7,12 +7,12 @@
 {% endblock %}
 
 {% block page_top_content %}
-<div class='py-3 bg-primary'>
-    <h4 class='bg-primary text-white text-center'>Question 1</h4>
+<div class='py-2 bg-primary card'>
+    <h4 class='text-white text-center'>Question 1: Center an Elenement</h4>
 </div>
 
-<div class='my-3 bg-primary'>
-    <h4 class='bg-secondary text-white px-3 py-2'>Modify the layout so that the following element is horizontally centered. </h4>
+<div class='my-3'>
+    <h4 class='px-3 py-2'><span class='text-danger'>Requirement:</span><br> Modify the layout so that the following element is horizontally centered. </h4>
 </div>
 {% endblock %}
 
@@ -24,18 +24,20 @@
     </div>
 </div>
 
-<div class='row mt-5'>
-    <div class='col-md-1'><a class='btn btn-sm btn-outline-info' href='{% url "questions:questions" %}'>Prev</a></div>
-    <div class='col-md-4'></div>
-    <div class='col-md-2 text-center'><a class='btn btn-sm btn-outline-info' href='{% url "questions:questions" %}'>Question List</a></div>
-    <div class='col-md-4'></div>
-    <div class='col-md-1 text-end'><a class='btn btn-sm btn-outline-info' href='{% url "questions:question2" %}'>Next</a></div>
-</div>
+
 
 <div class='row mt-5'>
     <div class='mt-3'>
         <h4 class='text-success px-3'>The final result should look like this. </h4>
     </div>
     <img src = '{% static "img/question1.png" %}'>
+</div>
+
+<div class='row mt-5'>
+    <div class='col-md-1'><a class='btn btn-sm btn-outline-info' href='{% url "questions:questions" %}'>Prev</a></div>
+    <div class='col-md-4'></div>
+    <div class='col-md-2 text-center'><a class='btn btn-sm btn-outline-info' href='{% url "questions:questions" %}'>Question List</a></div>
+    <div class='col-md-4'></div>
+    <div class='col-md-1 text-end'><a class='btn btn-sm btn-outline-info' href='{% url "questions:question2" %}'>Next</a></div>
 </div>
 {% endblock %}

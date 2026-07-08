@@ -4,7 +4,7 @@
 <head>
     <link rel="icon" href="{% static 'img/eagle.svg' %}">
     <link rel="stylesheet" href="{% static 'bootstrap/bootstrap.css' %}?v=1.0">
-    <link rel="stylesheet" href="{% static 'core.css' %}?v=1.0">
+    <link rel="stylesheet" href="{% static 'core/core.css' %}?v=1.0">
     <link rel="stylesheet" href="{% static 'fontawsome/fontawsome.css' %}?v=1.0">
     <link rel="stylesheet" href="{% static 'sweetalert/sweetalert.css' %}?v=1.0">
     
@@ -53,6 +53,7 @@
 
 {% block js_block %}
 {% endblock %}
-    <script type="text/javascript" src="{% static 'core.js' %}?v=1.0"></script>
+    <script type="text/javascript" src="{% static 'core/core.js' %}?v=1.0"></script>
+    <script type="text/javascript" src="{% static 'core/swal_msg.js' %}?v=1.0"></script>
 </body>
 </html>
