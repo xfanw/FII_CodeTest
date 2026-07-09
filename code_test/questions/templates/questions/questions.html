@@ -48,6 +48,14 @@ You can search on-line or use AI.
                     <td>AJAX</td>
                     <td>Delete Record</td>
                 </tr>
+                <tr>
+                    <td><a href='{% url "questions:question4" %}'>Question 4</a></td>
+                    <td>
+                        {% include 'questions/include/difficulty_level.html' with difficulty=3 %}
+                    </td>
+                    <td>Django ORM/DB Query</td>
+                    <td>Search Record</td>
+                </tr>
 
             </tbody>
         </table>
