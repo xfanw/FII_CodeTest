@@ -1,0 +1,16 @@
+
+<div class='row mt-5'>
+    {% if question == 1%}
+    <div class='col-md-1'><a class='btn btn-sm btn-outline-info' href='{% url "questions:questions" %}' >Prev</a></div>
+    {% else %}
+    <div class='col-md-1'><a class='btn btn-sm btn-outline-info' href="/question{{question|add:'-1'}}" >Prev</a></div>
+    {% endif %}
+    <div class='col-md-4'></div>
+    <div class='col-md-2 text-center'><a class='btn btn-sm btn-outline-info' href='{% url "questions:questions" %}'>Question List</a></div>
+    <div class='col-md-4'></div>
+    {% if is_last %}
+    <div class='col-md-1 text-end'><a class='btn btn-sm btn-outline-info' href='{% url "questions:questions" %}' >Next</a></div>
+    {% else %}
+    <div class='col-md-1 text-end'><a class='btn btn-sm btn-outline-info' href="/question{{question|add:'1'}}" >Next</a></div>
+    {% endif %}
+</div>

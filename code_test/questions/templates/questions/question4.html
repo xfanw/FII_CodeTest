@@ -43,13 +43,8 @@ Question 4: Search Value
         </tbody>
     </table>
 </div>
-<div class='row mt-5'>
-    <div class='col-md-1'><a class='btn btn-sm btn-outline-info' href='{% url "questions:question4" %}'>Prev</a></div>
-    <div class='col-md-4'></div>
-    <div class='col-md-2 text-center'><a class='btn btn-sm btn-outline-info' href='{% url "questions:questions" %}'>Question List</a></div>
-    <div class='col-md-4'></div>
-    <div class='col-md-1 text-end'><a class='btn btn-sm btn-outline-info' href='{% url "questions:questions" %}'>Next</a></div>
-</div>
+
+{% include "questions/includes/bottom_pagination.html" with question=2 is_last=True %}
 {% endblock %}
 
 {% block js_block %}

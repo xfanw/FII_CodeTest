@@ -38,13 +38,9 @@ Question 3: Delete Record
         </tbody>
     </table>
 </div>
-<div class='row mt-5'>
-    <div class='col-md-1'><a class='btn btn-sm btn-outline-info' href='{% url "questions:question2" %}'>Prev</a></div>
-    <div class='col-md-4'></div>
-    <div class='col-md-2 text-center'><a class='btn btn-sm btn-outline-info' href='{% url "questions:questions" %}'>Question List</a></div>
-    <div class='col-md-4'></div>
-    <div class='col-md-1 text-end'><a class='btn btn-sm btn-outline-info' href='{% url "questions:question4" %}'>Next</a></div>
-</div>
+
+{% include "questions/includes/bottom_pagination.html" with question=3 is_last=False %}
+
 {% endblock %}
 
 {% block js_block %}

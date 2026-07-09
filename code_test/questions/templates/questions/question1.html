@@ -31,11 +31,6 @@ Modify the layout so that the following element is horizontally centered.
     <img src = '{% static "img/question1.png" %}'>
 </div>
 
-<div class='row mt-5'>
-    <div class='col-md-1'><a class='btn btn-sm btn-outline-info' href='{% url "questions:questions" %}'>Prev</a></div>
-    <div class='col-md-4'></div>
-    <div class='col-md-2 text-center'><a class='btn btn-sm btn-outline-info' href='{% url "questions:questions" %}'>Question List</a></div>
-    <div class='col-md-4'></div>
-    <div class='col-md-1 text-end'><a class='btn btn-sm btn-outline-info' href='{% url "questions:question2" %}'>Next</a></div>
-</div>
+{% include "questions/includes/bottom_pagination.html" with question=1 is_last=False %}
+
 {% endblock %}

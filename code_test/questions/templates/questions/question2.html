@@ -50,13 +50,7 @@ Question 2: Input value Check
     <video controls><source src='{% static "img/question2.mp4" %}' type='video/mp4'></video>
 </div>
 
-<div class='row mt-5'>
-    <div class='col-md-1'><a class='btn btn-sm btn-outline-info' href='{% url "questions:question1" %}'>Prev</a></div>
-    <div class='col-md-4'></div>
-    <div class='col-md-2 text-center'><a class='btn btn-sm btn-outline-info' href='{% url "questions:questions" %}'>Question List</a></div>
-    <div class='col-md-4'></div>
-    <div class='col-md-1 text-end'><a class='btn btn-sm btn-outline-info' href='{% url "questions:question3" %}'>Next</a></div>
-</div>
+{% include "questions/includes/bottom_pagination.html" with question=2 is_last=False %}
 {% endblock %}
 
 {% block js_block %}
