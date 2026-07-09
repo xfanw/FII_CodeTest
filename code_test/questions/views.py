@@ -1,7 +1,13 @@
 from django.shortcuts import render
-
-from core.app_functions import json_success
+from core.app_functions import json_error, json_success
 from questions.models import Employee
+from django.contrib import messages
+
+
+def info():
+    messages.success()
+    json_success()
+    json_error()
 
 
 def question1(request):
@@ -27,4 +33,13 @@ def question3_delete_emp(request):
 
 def question4(request):
     context = {"emp_list": Employee.objects.all()}
+
+    search_val = request.GET.get("search_val")
+
+    if search_val:
+        context["curr_search"] = search_val
+        messages.error(request, f"Your search value is {search_val}")
+        # hint: write your code for question 4 here
+        # from django.db.models import Q  # as needed
+
     return render(request, "questions/question4.html", context)

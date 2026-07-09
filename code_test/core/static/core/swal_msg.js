@@ -40,21 +40,21 @@ function hide_loader() {
     $("body").removeClass("loader-open");
 }
 
-$(function () {
-    $.ajax({
-        url: "/api/server_type_api",
-        type: "GET",
-        success: function (response) {
-            if (response.server_type !== "PROD") {
-                $("#server_type_div").text(`This is ${response.server_type} Server | MES DB: ${response.mes_db} |  MFE DB: ${response.mfe_db} !!!`);
-            }
-            $("#curr_version_div").text(`v ${response.curr_version}`);
-        },
-        error: function () {
-            show_json_message("error", "Connection Error.");
-        },
-    }); // end ajax
-});
+// $(function () {
+//     $.ajax({
+//         url: "/api/server_type_api",
+//         type: "GET",
+//         success: function (response) {
+//             if (response.server_type !== "PROD") {
+//                 $("#server_type_div").text(`This is ${response.server_type} Server | MES DB: ${response.mes_db} |  MFE DB: ${response.mfe_db} !!!`);
+//             }
+//             $("#curr_version_div").text(`v ${response.curr_version}`);
+//         },
+//         error: function () {
+//             show_json_message("error", "Connection Error.");
+//         },
+//     }); // end ajax
+// });
 
 function show_top_right_error(title, msg = "", time_out = 2000) {
     let title_a_length = title.substring(title.indexOf("<a"), title.indexOf("/a>")).length;

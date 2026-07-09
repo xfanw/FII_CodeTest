@@ -1,3 +1,3 @@
 "use strict;";
 
-function test() {}
+$("input").attr("autocomplete", "off");
