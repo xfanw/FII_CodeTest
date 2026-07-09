@@ -84,9 +84,9 @@ function show_top_right_error(title, msg = "", time_out = 2000) {
         width: `${width}%`,
         confirmButtonColor: "#3085d6",
         confirmButtonText: `OK`,
-        didOpen: () => {
-            swal_delay_confirm(time_out);
-        },
+        // didOpen: () => {
+        //     swal_delay_confirm(time_out);
+        // },
     }); // end Swal
 }
 
