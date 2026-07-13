@@ -22,6 +22,7 @@ def question2(request):
 
 def question3(request):
     context = {"emp_list": Employee.objects.all()}
+
     return render(request, "questions/question3.html", context)
 
 
@@ -43,3 +44,9 @@ def question4(request):
         # from django.db.models import Q  # as needed
 
     return render(request, "questions/question4.html", context)
+
+
+def question5(request):
+    context = {"emp_list": Employee.objects.all()}
+
+    return render(request, "questions/question5.html", context)

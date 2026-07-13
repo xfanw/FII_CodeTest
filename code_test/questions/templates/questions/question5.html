@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}
+    Question 4
+{% endblock %}
+
+
+{% block question_head %}
+Question 5: Add New Employee
+{% endblock %}
+
+{% block question_detail %}
+    Users can search for employees by their first or last name. The search is case-insensitive.
+{% endblock %}
+
+
+{% block body_content %}
+<form method='GET'>
+    <div class='col-md-2'>
+        <div class='input-group'>
+            <input class='form-control' id='search_val' name='search_val' placeholder='Search Employee' value="{{curr_search|default:''}}">
+            <button class='btn btn-primary'>Search</button>
+        </div>
+    </div>
+</form>
+<div class='card mt-2'>
+    <table class="table table-hover table-fixed text-center mb-0">
+        <thead class='thead-sticky'>
+            <tr class='fw-bold'>
+                <th width='50%'>First</th>
+                <th width='50%'>Last</th>
+            </tr>
+        </thead>
+        <tbody class="text-center">
+            {% for emp in emp_list %}
+            <tr>
+                <td>{{emp.first_name}}</td>
+                <td>{{emp.last_name}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% include "questions/includes/bottom_pagination.html" with question=2 is_last=True %}
+{% endblock %}
+
+{% block js_block %}
+    <script type="text/javascript" src="{% static 'questions/question3_nochange.js' %}?v=1.0"></script>
+    <script type="text/javascript" src="{% static 'questions/question3.js' %}?v=1.0"></script>
+{% endblock %}
