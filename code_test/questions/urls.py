@@ -15,4 +15,6 @@ urlpatterns += [
     path("question3", question3, name="question3"),
     path("question3/delete_emp", question3_delete_emp, name="question3_delete_emp"),
     path("question4", question4, name="question4"),
+    path("question5", question5, name="question5"),
+    path("question5/add_employee", question5_add_employee, name="question5_add_employee"),
 ]

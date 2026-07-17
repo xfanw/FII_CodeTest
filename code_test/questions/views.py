@@ -50,3 +50,14 @@ def question5(request):
     context = {"emp_list": Employee.objects.all()}
 
     return render(request, "questions/question5.html", context)
+
+
+def question5_add_employee(request):
+    first_name = request.GET.get("first_name")
+    last_name = request.GET.get("last_name")
+    # check if employee with same first_name and last_name already exists, if not, create new employee
+    if first_name and last_name:
+        # Add new employee if not exists
+        return json_success(f"Employee {first_name} {last_name} added successfully.")
+
+    return json_error("You have to input both first name and last name. ")

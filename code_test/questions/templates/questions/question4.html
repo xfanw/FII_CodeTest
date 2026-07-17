@@ -44,10 +44,8 @@ Question 4: Search Value
     </table>
 </div>
 
-{% include "questions/includes/bottom_pagination.html" with question=2 is_last=True %}
+{% include "questions/includes/bottom_pagination.html" with question=4 is_last=False %}
 {% endblock %}
 
 {% block js_block %}
-    <script type="text/javascript" src="{% static 'questions/question3_nochange.js' %}?v=1.0"></script>
-    <script type="text/javascript" src="{% static 'questions/question3.js' %}?v=1.0"></script>
 {% endblock %}

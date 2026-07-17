@@ -3,7 +3,7 @@
 {% load static %}
 
 {% block title %}
-    Question 4
+    Question 5
 {% endblock %}
 
 
@@ -12,17 +12,20 @@ Question 5: Add New Employee
 {% endblock %}
 
 {% block question_detail %}
-    Users can search for employees by their first or last name. The search is case-insensitive.
+    Users can add a new employee by clicking the "Add Employee" button.
+    If same first_name and last_name already exists, the system will show an error message.
+    The system will display a success message if the employee is added successfully.
 {% endblock %}
 
 
 {% block body_content %}
-<form method='GET'>
-    <div class='col-md-2'>
-        <div class='input-group'>
-            <input class='form-control' id='search_val' name='search_val' placeholder='Search Employee' value="{{curr_search|default:''}}">
-            <button class='btn btn-primary'>Search</button>
-        </div>
+<form method='GET' class='row'>
+    <div class='col-md-3'>
+    </div>
+    <div class='col-md-6 text-center'>
+        <button type='button' class='btn btn-primary' onclick='add_employee()'>Add Employee</button>
+    </div>
+    <div class='col-md-3'>
     </div>
 </form>
 <div class='card mt-2'>
@@ -44,10 +47,9 @@ Question 5: Add New Employee
     </table>
 </div>
 
-{% include "questions/includes/bottom_pagination.html" with question=2 is_last=True %}
+{% include "questions/includes/bottom_pagination.html" with question=5 is_last=True %}
 {% endblock %}
 
 {% block js_block %}
-    <script type="text/javascript" src="{% static 'questions/question3_nochange.js' %}?v=1.0"></script>
-    <script type="text/javascript" src="{% static 'questions/question3.js' %}?v=1.0"></script>
+    <script type="text/javascript" src="{% static 'questions/question5_nochange.js' %}?v=1.0"></script>
 {% endblock %}
