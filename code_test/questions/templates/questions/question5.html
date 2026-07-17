@@ -12,9 +12,9 @@ Question 5: Add New Employee
 {% endblock %}
 
 {% block question_detail %}
-    Users can add a new employee by clicking the "Add Employee" button.
-    If same first_name and last_name already exists, the system will show an error message.
-    The system will display a success message if the employee is added successfully.
+    Users can add a new employee by clicking the <span class='btn btn-primary'>Add Employee</span> button.<br>
+    If same first_name and last_name already exists, the system will show an error message.<br>
+    The system will display a success message if the employee is added successfully.<br>
 {% endblock %}
 
 
@@ -47,7 +47,7 @@ Question 5: Add New Employee
     </table>
 </div>
 
-{% include "questions/includes/bottom_pagination.html" with question=5 is_last=True %}
+{% include "questions/includes/bottom_pagination.html" with question=5 is_last=False %}
 {% endblock %}
 
 {% block js_block %}

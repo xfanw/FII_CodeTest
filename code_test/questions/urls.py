@@ -17,4 +17,5 @@ urlpatterns += [
     path("question4", question4, name="question4"),
     path("question5", question5, name="question5"),
     path("question5/add_employee", question5_add_employee, name="question5_add_employee"),
+    path("question6", Question6.as_view(), name="question6"),
 ]

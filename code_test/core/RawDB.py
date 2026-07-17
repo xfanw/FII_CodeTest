@@ -1,18 +1,17 @@
-import sqlite3
+from django.db import connection
 
 
 def reset_index(table_name_list):
-    conn = sqlite3.connect("example.db")
-    cursor = conn.cursor()
+    cursor = connection.cursor()
 
     # 2. Send the raw query
     for table_name in table_name_list:
         try:
-            cursor.execute(f"Delete from sqlite_sequence WHERE name = {table_name};")
-            conn.commit()
+            cursor.execute(f"Delete from sqlite_sequence WHERE name = '{table_name}';")
+            connection.commit()
         except Exception as e:
             print(e)
-            conn.rollback()
+            connection.rollback()
             continue
 
-    conn.close()
+    connection.close()

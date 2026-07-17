@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}
+    Question 6
+{% endblock %}
+
+
+{% block question_head %}
+Question 6: Add Several New Employees
+{% endblock %}
+
+{% block question_detail %}
+    Users can add several new employees by clicking the <span class='btn btn-outline-info fw-medium'>Add Employee</span> button multiple times.<br>
+    User click <span class='btn btn-primary fw-medium'>Save</span> button to save all added employees.<br>
+{% endblock %}
+
+
+{% block body_content %}
+<form method='POST'>
+    {% csrf_token %}
+    <div class='card mt-2'>
+        <table class="table table-hover table-fixed text-center mb-0">
+            <thead class='thead-sticky'>
+                <tr class='fw-bold'>
+                    <th width='50%'>First</th>
+                    <th width='50%'>Last</th>
+                </tr>
+            </thead>
+            <tbody class="text-center" id='emp_list'>
+                {% for emp in emp_list %}
+                <tr>
+                    <td>{{emp.first_name}}</td>
+                    <td>{{emp.last_name}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div class='col-md-12 text-end mt-2'>
+        <button type='button' class='btn btn-outline-info me-5 fw-medium' onclick='add_employee()'>Add Employee</button>
+        <button type='submit' class='btn btn-primary fw-medium'>Save</button>
+    </div>
+</form>
+
+{% include "questions/includes/bottom_pagination.html" with question=6 is_last=True %}
+{% endblock %}
+
+{% block js_block %}
+    <script type="text/javascript" src="{% static 'questions/question6_nochange.js' %}?v=1.0"></script>
+{% endblock %}

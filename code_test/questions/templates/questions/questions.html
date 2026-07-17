@@ -51,10 +51,26 @@ You may also search online or use AI tools to assist you.
                 <tr>
                     <td><a href='{% url "questions:question4" %}'>Question 4</a></td>
                     <td>
-                        {% include 'questions/includes/difficulty_level.html' with difficulty=3 %}
+                        {% include 'questions/includes/difficulty_level.html' with difficulty=2 %}
                     </td>
                     <td>Django ORM/DB Query</td>
                     <td>Search Record</td>
+                </tr>
+                <tr>
+                    <td><a href='{% url "questions:question5" %}'>Question 5</a></td>
+                    <td>
+                        {% include 'questions/includes/difficulty_level.html' with difficulty=2 %}
+                    </td>
+                    <td>Django ORM/DB Query</td>
+                    <td>Add Record</td>
+                </tr>
+                <tr>
+                    <td><a href='{% url "questions:question6" %}'>Question 6</a></td>
+                    <td>
+                        {% include 'questions/includes/difficulty_level.html' with difficulty=3 %}
+                    </td>
+                    <td>Django ORM/DB Query</td>
+                    <td>Add Multiple Records</td>
                 </tr>
 
             </tbody>
