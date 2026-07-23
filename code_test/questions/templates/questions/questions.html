@@ -1,79 +1,54 @@
-{% extends 'base.html' %}
-
-{% load static %}
-
-
-{% block question_head %}
-Welcome to FII Django Project Code Test
-{% endblock %}
-{% block question_detail %}
-Complete as many tasks as you can. <br>
-Feel free to learn from or reference the existing code. <br>
-You may also search online or use AI tools to assist you.
-{% endblock %}
-
-{% block body_content %}
-    <div class='card'>
-        <table class="table table-hover table-fixed text-center mb-0">
-            <thead class='thead-sticky'>
-                <tr class='fw-bold'>
-                    <th width='30%'>Question</th>
-                    <th width='20%'>Difficulty</th>
-                    <th width='20%'>Skill</th>
-                    <th width='30%'>Description</th>
-                </tr>
-            </thead>
-            <tbody class="text-center">
-                <tr>
-                    <td><a href='{% url "questions:question1" %}'>Question 1</a></td>
-                    <td>
-                        {% include 'questions/includes/difficulty_level.html' with difficulty=1 %}
-                    </td>
-                    <td>HTML / CSS</td>
-                    <td>Center an Elenement</td>
-                </tr>
-                <tr>
-                    <td><a href='{% url "questions:question2" %}'>Question 2</a></td>
-                    <td>
-                        {% include 'questions/includes/difficulty_level.html' with difficulty=2 %}
-                    </td>
-                    <td>Js/jQuery</td>
-                    <td>Input value Check</td>
-                </tr>
-                <tr>
-                    <td><a href='{% url "questions:question3" %}'>Question 3</a></td>
-                    <td>
-                        {% include 'questions/includes/difficulty_level.html' with difficulty=2 %}
-                    </td>
-                    <td>AJAX</td>
-                    <td>Delete Record</td>
-                </tr>
-                <tr>
-                    <td><a href='{% url "questions:question4" %}'>Question 4</a></td>
-                    <td>
-                        {% include 'questions/includes/difficulty_level.html' with difficulty=2 %}
-                    </td>
-                    <td>Django ORM/DB Query</td>
-                    <td>Search Record</td>
-                </tr>
-                <tr>
-                    <td><a href='{% url "questions:question5" %}'>Question 5</a></td>
-                    <td>
-                        {% include 'questions/includes/difficulty_level.html' with difficulty=2 %}
-                    </td>
-                    <td>Django ORM/DB Query</td>
-                    <td>Add Record</td>
-                </tr>
-                <tr>
-                    <td><a href='{% url "questions:question6" %}'>Question 6</a></td>
-                    <td>
-                        {% include 'questions/includes/difficulty_level.html' with difficulty=3 %}
-                    </td>
-                    <td>Django ORM/DB Query</td>
-                    <td>Add Multiple Records</td>
-                </tr>
-
-            </tbody>
-        </table>
-    </div>
+{% extends 'base.html' %} {% load static %} {% block question_head %} Welcome to FII Django Project Code Test {% endblock %} {% block question_detail %} Complete as many tasks as you can. <br />
+Feel free to learn from or reference the existing code. <br />
+You may also search online but <b class="text-danger">CANNOT use AI tools</b> to assist you. {% endblock %} {% block body_content %}
+<div class="card">
+    <table class="table table-hover table-fixed text-center mb-0">
+        <thead class="thead-sticky">
+            <tr class="fw-bold">
+                <th width="30%">Question</th>
+                <th width="20%">Difficulty</th>
+                <th width="20%">Skill</th>
+                <th width="30%">Description</th>
+            </tr>
+        </thead>
+        <tbody class="text-center">
+            <tr>
+                <td><a href='{% url "questions:question1" %}'>Question 1</a></td>
+                <td>{% include 'questions/includes/difficulty_level.html' with difficulty=1 %}</td>
+                <td>HTML / CSS</td>
+                <td>Center an Elenement</td>
+            </tr>
+            <tr>
+                <td><a href='{% url "questions:question2" %}'>Question 2</a></td>
+                <td>{% include 'questions/includes/difficulty_level.html' with difficulty=2 %}</td>
+                <td>Js/jQuery</td>
+                <td>Input value Check</td>
+            </tr>
+            <tr>
+                <td><a href='{% url "questions:question3" %}'>Question 3</a></td>
+                <td>{% include 'questions/includes/difficulty_level.html' with difficulty=2 %}</td>
+                <td>AJAX</td>
+                <td>Delete Record</td>
+            </tr>
+            <tr>
+                <td><a href='{% url "questions:question4" %}'>Question 4</a></td>
+                <td>{% include 'questions/includes/difficulty_level.html' with difficulty=2 %}</td>
+                <td>Django ORM/DB Query</td>
+                <td>Search Record</td>
+            </tr>
+            <tr>
+                <td><a href='{% url "questions:question5" %}'>Question 5</a></td>
+                <td>{% include 'questions/includes/difficulty_level.html' with difficulty=2 %}</td>
+                <td>Django ORM/DB Query</td>
+                <td>Add Record</td>
+            </tr>
+            <tr>
+                <td><a href='{% url "questions:question6" %}'>Question 6</a></td>
+                <td>{% include 'questions/includes/difficulty_level.html' with difficulty=3 %}</td>
+                <td>Django ORM/DB Query</td>
+                <td>Add Multiple Records</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 {% endblock %}
